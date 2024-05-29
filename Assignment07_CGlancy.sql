@@ -447,7 +447,7 @@ AS
  ,PreviousMonthCount = IIF(InventoryDate LIKE ('January%'),0,LAG(InventoryCount,1) OVER (ORDER BY ProductName, CONVERT (datetime, InventoryDate)))
  FROM vProductInventories
  GROUP BY ProductName, InventoryDate, InventoryCount
- ORDER BY ProductName, cast(InventoryDate AS date) ASC
+ ORDER BY ProductName, CAST(InventoryDate AS date) ASC
 ;
 go
 
@@ -494,7 +494,7 @@ SELECT TOP 1000000000
     END AS CountVsPreviousCountKPI
  FROM vProductInventoriesWithPreviousMonthCounts
  GROUP BY ProductName, InventoryDate, InventoryCount, PreviousMonthCount
- ORDER BY ProductName, cast(InventoryDate AS date) ASC
+ ORDER BY ProductName, CAST(InventoryDate AS date) ASC
 ;
 go
 
@@ -528,7 +528,7 @@ AS
     ,CountVsPreviousCountKPI
     FROM vProductInventoriesWithPreviousMonthCountsWithKPIs
     WHERE CountVsPreviousCountKPI = @KPI
-    ORDER BY ProductName, cast(InventoryDate AS date) ASC
+    ORDER BY ProductName, CAST(InventoryDate AS date) ASC
  )
 ;
 go
