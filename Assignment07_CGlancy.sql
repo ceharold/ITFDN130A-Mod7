@@ -539,9 +539,10 @@ Select * From fProductInventoriesWithPreviousMonthCountsWithKPIs(0);
 Select * From fProductInventoriesWithPreviousMonthCountsWithKPIs(-1);
 */
 SELECT * FROM fProductInventoriesWithPreviousMonthCountsWithKPIs(1);
+go
 SELECT * FROM fProductInventoriesWithPreviousMonthCountsWithKPIs(0);
+go
 SELECT * FROM fProductInventoriesWithPreviousMonthCountsWithKPIs(-1);
-
 go
 
 /***************************************************************************************/
